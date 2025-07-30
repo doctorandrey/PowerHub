@@ -1,8 +1,7 @@
 # ESP32-C3 Power Hub
 
 ## Features
-=======
-A sophisticated ESP32-C3-based power management system with a web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
+ESP32-C3-based power management system with a web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
 
 ## Features
 ### **Hardware Control**
@@ -24,8 +23,6 @@ A sophisticated ESP32-C3-based power management system with a web interface for 
 - **LED Status Indicators**: Visual feedback for system state
 - **Automatic Reconnection**: Attempts WiFi reconnection every 5 minutes
 
-## Hardware Requirements
-=======
 ## Hardware Requirements
 
 ### **ESP32-C3 Development Board**
@@ -57,8 +54,6 @@ Serial Interface:
 ```
 
 ## Dependencies
-=======
-## Dependencies
 
 ### **PlatformIO Libraries**
 ```ini
@@ -78,8 +73,6 @@ lib_deps =
 - `ArduinoJson.h` - JSON parsing
 - `SerialCommand.h` - Serial command parsing
 
-## Installation
-=======
 ## Installation
 
 ### **1. Clone the Repository**
@@ -190,11 +183,7 @@ RESET     # Reset all channels to default state
 - **WiFi Error**: 2 blinks every 30 seconds
 - **Normal Operation**: 1 blink every 5 seconds
 
-<<<<<<< HEAD
-## 🛡️ Error Handling
-=======
 ## Error Handling
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **WiFi Failures**
 - Continues operation without network
@@ -209,18 +198,10 @@ RESET     # Reset all channels to default state
 - Serial interface unaffected
 
 ### **Memory Management**
-<<<<<<< HEAD
-- JSON document reservation to prevent fragmentation
-- Proper WebSocket client cleanup
-- State persistence across reboots
-
-## ⚙️ Configuration
-=======
 - Proper WebSocket client cleanup
 - State persistence across reboots
 
 ## Configuration
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Pin Assignments**
 ```cpp
@@ -243,11 +224,7 @@ ledcSetup(1, 5000, 8);  // Channel 1, 5kHz, 8-bit resolution
 // ... for all 4 PWM channels
 ```
 
-<<<<<<< HEAD
-## 📁 Project Structure
-=======
 ## Project Structure
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ```
 Power Hub/
@@ -261,8 +238,7 @@ Power Hub/
 └── README.md                 # This file
 ```
 
-<<<<<<< HEAD
-## 🚀 Usage Examples
+## Usage Examples
 
 ### **Home Automation**
 - Control LED strips with PWM dimming
@@ -279,19 +255,12 @@ Power Hub/
 - Remote monitoring systems
 - Automated control systems
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] OTA (Over-The-Air) updates
-- [ ] MQTT integration
-- [ ] Multiple WiFi network support
-- [ ] Configuration web interface
-- [ ] Advanced scheduling features
-- [ ] Security authentication
-- [ ] HTTPS support
-- [ ] Mobile app companion
 
-## 🤝 Contributing
-=======
+## Contributing
+
 ## Usage Examples
 
 ### **IoT Projects**
@@ -305,28 +274,23 @@ Power Hub/
 - [ ] Configuration web interface
 
 ## Contributing
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
-
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
 
-<<<<<<< HEAD
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-=======
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
 - ESP32 Arduino Core
 - ESPAsyncWebServer library
 - ArduinoJson library
@@ -334,8 +298,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-<<<<<<< HEAD
 **Built with ❤️ for the ESP32 community** 
-=======
-**Built with ❤️ for the ESP32 community**
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
