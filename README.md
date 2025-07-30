@@ -2,7 +2,7 @@
 
 A sophisticated ESP32-C3-based power management system with a web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
 
-## 🚀 Features
+## Features
 
 ### **Hardware Control**
 - **4 Digital Channels**: ON/OFF control for relays or digital outputs
@@ -23,12 +23,17 @@ A sophisticated ESP32-C3-based power management system with a web interface for 
 - **LED Status Indicators**: Visual feedback for system state
 - **Automatic Reconnection**: Attempts WiFi reconnection every 5 minutes
 
-## 🛠️ Hardware Requirements
+## Hardware Requirements
 
 ### **ESP32-C3 Development Board**
 - ESP32-C3-DevKitM-1 or compatible
 - Built-in LED for status indication
 - WiFi connectivity
+
+
+### **ESP32-C3 Development Board**
+- 8-channel MOSFET control board
+https://aliexpress.ru/item/1005008202397815.html
 
 ### **Output Channels**
 ```
