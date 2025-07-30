@@ -54,7 +54,7 @@ Serial Interface:
 - TX: Pin 21
 ```
 
-## 📋 Dependencies
+## Dependencies
 
 ### **PlatformIO Libraries**
 ```ini
@@ -74,7 +74,7 @@ lib_deps =
 - `ArduinoJson.h` - JSON parsing
 - `SerialCommand.h` - Serial command parsing
 
-## 🔧 Installation
+## Installation
 
 ### **1. Clone the Repository**
 ```bash
@@ -99,7 +99,7 @@ pio run -t uploadfs
 pio run -t upload
 ```
 
-## 🌐 Web Interface
+## Web Interface
 
 ### **Access**
 Once connected to WiFi, access the web interface at:
@@ -114,7 +114,7 @@ http://[ESP32_IP_ADDRESS]
 - **Status Display**: Current channel states
 - **Emergency Mode**: Basic interface when filesystem unavailable
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### **GET /api**
 Returns JSON configuration of all channels:
@@ -141,7 +141,7 @@ Returns JSON configuration of all channels:
 - **Incoming**: `{"command": "CH1=ON"}`
 - **Outgoing**: Acknowledgments and status updates
 
-## 🔌 Serial Commands
+## Serial Commands
 
 ### **Digital Channels**
 ```
@@ -166,7 +166,7 @@ STATUS    # Get status of all channels
 RESET     # Reset all channels to default state
 ```
 
-## 💡 LED Status Indicators
+## LED Status Indicators
 
 ### **Blink Patterns**
 - **Error (3 blinks)**: Filesystem or critical errors
@@ -179,7 +179,7 @@ RESET     # Reset all channels to default state
 - **WiFi Error**: 2 blinks every 30 seconds
 - **Normal Operation**: 1 blink every 5 seconds
 
-## 🛡️ Error Handling
+## Error Handling
 
 ### **WiFi Failures**
 - Continues operation without network
@@ -197,7 +197,7 @@ RESET     # Reset all channels to default state
 - Proper WebSocket client cleanup
 - State persistence across reboots
 
-## ⚙️ Configuration
+## Configuration
 
 ### **Pin Assignments**
 ```cpp
@@ -220,7 +220,7 @@ ledcSetup(1, 5000, 8);  // Channel 1, 5kHz, 8-bit resolution
 // ... for all 4 PWM channels
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Power Hub/
@@ -234,19 +234,19 @@ Power Hub/
 └── README.md                 # This file
 ```
 
-## 🚀 Usage Examples
+## Usage Examples
 
 ### **IoT Projects**
 - Automated control systems - Power Hub for astrophoto setup
 - PWM controller for Dew Heater of Flat Box
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] OTA (Over-The-Air) updates
 - [ ] Multiple WiFi network support
 - [ ] Configuration web interface
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -254,11 +254,11 @@ Power Hub/
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - ESP32 Arduino Core
 - ESPAsyncWebServer library
