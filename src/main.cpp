@@ -98,8 +98,8 @@ bool wifi_connected = false;
 bool filesystem_available = false;
 bool server_initialized = false;
 
-const char* WIFI_SSID = "WLAN_KEEN";
-const char* WIFI_PASS = "FineFive5";
+const char* WIFI_SSID = "your_ssid";
+const char* WIFI_PASS = "wlan_pass";
 
 int pwmValues[4] = {0};
 
