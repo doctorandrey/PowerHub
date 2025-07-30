@@ -1,8 +1,14 @@
 # ESP32-C3 Power Hub
 
+<<<<<<< HEAD
 A sophisticated ESP32-C3-based power management system with a modern web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
 
 ## 🚀 Features
+=======
+A sophisticated ESP32-C3-based power management system with a web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
+
+## Features
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Hardware Control**
 - **4 Digital Channels**: ON/OFF control for relays or digital outputs
@@ -23,13 +29,25 @@ A sophisticated ESP32-C3-based power management system with a modern web interfa
 - **LED Status Indicators**: Visual feedback for system state
 - **Automatic Reconnection**: Attempts WiFi reconnection every 5 minutes
 
+<<<<<<< HEAD
 ## 🛠️ Hardware Requirements
+=======
+## Hardware Requirements
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **ESP32-C3 Development Board**
 - ESP32-C3-DevKitM-1 or compatible
 - Built-in LED for status indication
 - WiFi connectivity
 
+<<<<<<< HEAD
+=======
+
+### **ESP32-C3 Development Board**
+- 8-channel MOSFET control board
+https://aliexpress.ru/item/1005008202397815.html
+
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 ### **Output Channels**
 ```
 Digital Channels (ON/OFF):
@@ -49,7 +67,11 @@ Serial Interface:
 - TX: Pin 21
 ```
 
+<<<<<<< HEAD
 ## 📋 Dependencies
+=======
+## Dependencies
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **PlatformIO Libraries**
 ```ini
@@ -69,7 +91,11 @@ lib_deps =
 - `ArduinoJson.h` - JSON parsing
 - `SerialCommand.h` - Serial command parsing
 
+<<<<<<< HEAD
 ## 🔧 Installation
+=======
+## Installation
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **1. Clone the Repository**
 ```bash
@@ -94,7 +120,11 @@ pio run -t uploadfs
 pio run -t upload
 ```
 
+<<<<<<< HEAD
 ## 🌐 Web Interface
+=======
+## Web Interface
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Access**
 Once connected to WiFi, access the web interface at:
@@ -109,7 +139,11 @@ http://[ESP32_IP_ADDRESS]
 - **Status Display**: Current channel states
 - **Emergency Mode**: Basic interface when filesystem unavailable
 
+<<<<<<< HEAD
 ## 🔌 API Endpoints
+=======
+## API Endpoints
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **GET /api**
 Returns JSON configuration of all channels:
@@ -136,7 +170,11 @@ Returns JSON configuration of all channels:
 - **Incoming**: `{"command": "CH1=ON"}`
 - **Outgoing**: Acknowledgments and status updates
 
+<<<<<<< HEAD
 ## 🔌 Serial Commands
+=======
+## Serial Commands
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Digital Channels**
 ```
@@ -161,7 +199,11 @@ STATUS    # Get status of all channels
 RESET     # Reset all channels to default state
 ```
 
+<<<<<<< HEAD
 ## 💡 LED Status Indicators
+=======
+## LED Status Indicators
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Blink Patterns**
 - **Error (3 blinks)**: Filesystem or critical errors
@@ -174,7 +216,11 @@ RESET     # Reset all channels to default state
 - **WiFi Error**: 2 blinks every 30 seconds
 - **Normal Operation**: 1 blink every 5 seconds
 
+<<<<<<< HEAD
 ## 🛡️ Error Handling
+=======
+## Error Handling
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **WiFi Failures**
 - Continues operation without network
@@ -189,11 +235,18 @@ RESET     # Reset all channels to default state
 - Serial interface unaffected
 
 ### **Memory Management**
+<<<<<<< HEAD
 - JSON document reservation to prevent fragmentation
 - Proper WebSocket client cleanup
 - State persistence across reboots
 
 ## ⚙️ Configuration
+=======
+- Proper WebSocket client cleanup
+- State persistence across reboots
+
+## Configuration
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Pin Assignments**
 ```cpp
@@ -216,7 +269,11 @@ ledcSetup(1, 5000, 8);  // Channel 1, 5kHz, 8-bit resolution
 // ... for all 4 PWM channels
 ```
 
+<<<<<<< HEAD
 ## 📁 Project Structure
+=======
+## Project Structure
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ```
 Power Hub/
@@ -230,6 +287,7 @@ Power Hub/
 └── README.md                 # This file
 ```
 
+<<<<<<< HEAD
 ## 🚀 Usage Examples
 
 ### **Home Automation**
@@ -259,6 +317,21 @@ Power Hub/
 - [ ] Mobile app companion
 
 ## 🤝 Contributing
+=======
+## Usage Examples
+
+### **IoT Projects**
+- Automated control systems - Power Hub for astrophoto setup
+- PWM controller for Dew Heater of Flat Box
+
+## Future Enhancements
+
+- [ ] OTA (Over-The-Air) updates
+- [ ] Multiple WiFi network support
+- [ ] Configuration web interface
+
+## Contributing
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 1. Fork the repository
 2. Create a feature branch
@@ -266,11 +339,19 @@ Power Hub/
 4. Test thoroughly
 5. Submit a pull request
 
+<<<<<<< HEAD
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgments
+=======
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 - ESP32 Arduino Core
 - ESPAsyncWebServer library
@@ -279,4 +360,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
+<<<<<<< HEAD
 **Built with ❤️ for the ESP32 community** 
+=======
+**Built with ❤️ for the ESP32 community**
+>>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d

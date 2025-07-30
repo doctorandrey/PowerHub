@@ -74,7 +74,6 @@ struct OnboardLed {
     }
   }
   
-  // Convenience methods for common patterns
   void errorBlink() {
     blink(3, 500); // 3 blinks with 500ms interval
   }
