@@ -1,0 +1,114 @@
+#include <Arduino.h>
+
+// === ВЕДОМОЕ УСТРОЙСТВО (ESP32-C3) ===
+#include <SerialCommand.h>
+#include <HardwareSerial.h>
+
+SerialCommand sCmd;
+
+#define RX_PIN 20
+#define TX_PIN 21
+
+#define CH1_PIN 1   // ON/OFF
+#define CH2_PIN 2
+#define CH3_PIN 3
+#define CH4_PIN 4  
+#define CH5_PIN 5   // PWM
+#define CH6_PIN 6
+#define CH7_PIN 7
+#define CH8_PIN 8
+
+#define CH_ON LOW
+#define CH_OFF HIGH
+
+int pwmValues[4] = {0};
+
+void handlePwm(int channel, const char* label) {
+  char* arg = sCmd.next();
+  if (arg) {
+    int val = atoi(arg);
+    if (val >= 0 && val <= 255) {
+      pwmValues[channel] = val;
+      ledcWrite(channel, val);
+      Serial1.printf("%s=%d OK\r\n", label, val);
+      return;
+    }
+  }
+  Serial1.printf("%s=%s FAIL\r\n", label, arg ? arg : "NULL");
+}
+
+void cmdStatus() {
+  Serial1.printf("CH1=%s;", digitalRead(CH1_PIN) ? "ON" : "OFF");
+  Serial1.printf("CH2=%s;", digitalRead(CH2_PIN) ? "ON" : "OFF");
+  Serial1.printf("CH3=%s;", digitalRead(CH3_PIN) ? "ON" : "OFF");
+  Serial1.printf("CH4=%s;", digitalRead(CH4_PIN) ? "ON" : "OFF");
+  Serial1.printf("CH5=%d;", pwmValues[0]);
+  Serial1.printf("CH6=%d;", pwmValues[1]);
+  Serial1.printf("CH7=%d;", pwmValues[2]);
+  Serial1.printf("CH8=%d\r\n", pwmValues[3]);
+}
+
+void cmdClearQueue() {
+  Serial1.print("CLEARQUEUE OK\r\n");
+}
+
+void cmdError() {
+  Serial1.print("ERR\r\n");
+}
+
+void handleOnOff(int pin, const char* label) {
+  char* arg = sCmd.next();
+  if (arg && (strcmp(arg, "ON") == 0 || strcmp(arg, "OFF") == 0)) {
+    digitalWrite(pin, strcmp(arg, "ON") == 0 ? CH_ON : CH_OFF);
+    Serial1.printf("%s=%s OK\r\n", label, arg);
+  } else {
+    Serial1.printf("%s=%s FAIL\r\n", label, arg ? arg : "NULL");
+  }
+}
+
+void cmdCh1() { handleOnOff(CH1_PIN, "CH1"); }
+void cmdCh2() { handleOnOff(CH2_PIN, "CH2"); }
+void cmdCh3() { handleOnOff(CH3_PIN, "CH3"); }
+void cmdCh4() { handleOnOff(CH4_PIN, "CH4"); }
+
+void cmdCh5() { handlePwm(0, "CH5"); }
+void cmdCh6() { handlePwm(1, "CH6"); }
+void cmdCh7() { handlePwm(2, "CH7"); }
+void cmdCh8() { handlePwm(3, "CH8"); }
+
+void setup() {
+  Serial.begin(115200);
+  Serial1.begin(9600, SERIAL_8N1, RX_PIN, TX_PIN);
+
+  sCmd.begin(Serial1);
+
+  pinMode(CH1_PIN, OUTPUT);
+  pinMode(CH2_PIN, OUTPUT);
+  pinMode(CH3_PIN, OUTPUT);
+  pinMode(CH4_PIN, OUTPUT);
+  digitalWrite(CH1_PIN, CH_OFF);
+  digitalWrite(CH2_PIN, CH_OFF);
+  digitalWrite(CH3_PIN, CH_OFF);
+  digitalWrite(CH4_PIN, CH_OFF);
+
+  ledcSetup(0, 5000, 8); ledcAttachPin(CH5_PIN, 0);
+  ledcSetup(1, 5000, 8); ledcAttachPin(CH6_PIN, 1);
+  ledcSetup(2, 5000, 8); ledcAttachPin(CH7_PIN, 2);
+  ledcSetup(3, 5000, 8); ledcAttachPin(CH8_PIN, 3);
+
+  sCmd.addWriteCommand("CH1", cmdCh1);
+  sCmd.addWriteCommand("CH2", cmdCh2);
+  sCmd.addWriteCommand("CH3", cmdCh3);
+  sCmd.addWriteCommand("CH4", cmdCh4);
+  sCmd.addWriteCommand("CH5", cmdCh5);
+  sCmd.addWriteCommand("CH6", cmdCh6);
+  sCmd.addWriteCommand("CH7", cmdCh7);
+  sCmd.addWriteCommand("CH8", cmdCh8);
+  sCmd.addReadCommand("STATUS", cmdStatus);
+  sCmd.addExecuteCommand("CLEARQUEUE", cmdClearQueue);
+  sCmd.addError(cmdError);
+}
+
+void loop() {
+  sCmd.loop();
+}

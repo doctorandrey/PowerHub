@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  text-align: center;
+  background-color: inherit;
+  border: 1px solid #8884;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px #00000033;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.reading {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.button {
+  padding: 0.4rem 1rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.green {
+  background-color: #4caf50;
+  color: white;
+}
+
+.red {
+  background-color: #f44336;
+  color: white;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+body.light .theme-toggle {
+  background-color: #ddd;
+  color: #111;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #4caf50;
+  cursor: pointer;
+}
