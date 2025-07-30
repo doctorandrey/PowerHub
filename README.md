@@ -1,8 +1,6 @@
 # ESP32-C3 Power Hub
 
-A sophisticated ESP32-C3-based power management system with a modern web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
-
-## 🚀 Features
+## Features
 =======
 A sophisticated ESP32-C3-based power management system with a web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
 
@@ -39,7 +37,6 @@ A sophisticated ESP32-C3-based power management system with a web interface for 
 - 8-channel MOSFET control board
 https://aliexpress.ru/item/1005008202397815.html
 
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 ### **Output Channels**
 ```
 Digital Channels (ON/OFF):
@@ -59,11 +56,9 @@ Serial Interface:
 - TX: Pin 21
 ```
 
-<<<<<<< HEAD
-## 📋 Dependencies
+## Dependencies
 =======
 ## Dependencies
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **PlatformIO Libraries**
 ```ini
@@ -83,11 +78,9 @@ lib_deps =
 - `ArduinoJson.h` - JSON parsing
 - `SerialCommand.h` - Serial command parsing
 
-<<<<<<< HEAD
-## 🔧 Installation
+## Installation
 =======
 ## Installation
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **1. Clone the Repository**
 ```bash
@@ -112,9 +105,6 @@ pio run -t uploadfs
 pio run -t upload
 ```
 
-<<<<<<< HEAD
-## 🌐 Web Interface
-=======
 ## Web Interface
 >>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
@@ -131,11 +121,7 @@ http://[ESP32_IP_ADDRESS]
 - **Status Display**: Current channel states
 - **Emergency Mode**: Basic interface when filesystem unavailable
 
-<<<<<<< HEAD
-## 🔌 API Endpoints
-=======
 ## API Endpoints
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **GET /api**
 Returns JSON configuration of all channels:
@@ -162,11 +148,7 @@ Returns JSON configuration of all channels:
 - **Incoming**: `{"command": "CH1=ON"}`
 - **Outgoing**: Acknowledgments and status updates
 
-<<<<<<< HEAD
-## 🔌 Serial Commands
-=======
 ## Serial Commands
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Digital Channels**
 ```
