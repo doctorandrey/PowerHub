@@ -1,6 +1,5 @@
 # ESP32-C3 Power Hub
 
-<<<<<<< HEAD
 A sophisticated ESP32-C3-based power management system with a modern web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
 
 ## 🚀 Features
@@ -8,8 +7,6 @@ A sophisticated ESP32-C3-based power management system with a modern web interfa
 A sophisticated ESP32-C3-based power management system with a web interface for remote control of 8 channels (4 digital ON/OFF + 4 PWM channels).
 
 ## Features
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
-
 ### **Hardware Control**
 - **4 Digital Channels**: ON/OFF control for relays or digital outputs
 - **4 PWM Channels**: 0-255 dimming control for LED strips, motors, or other PWM devices
@@ -23,25 +20,20 @@ A sophisticated ESP32-C3-based power management system with a web interface for 
 - **Emergency Mode**: Fallback interface when filesystem is unavailable
 - **Dynamic UI**: Automatically generates controls based on channel configuration
 
-### **Robust Error Handling**
+### **Error Handling**
 - **Graceful WiFi Failures**: Continues operation without network
 - **Filesystem Recovery**: Emergency web interface when filesystem fails
 - **LED Status Indicators**: Visual feedback for system state
 - **Automatic Reconnection**: Attempts WiFi reconnection every 5 minutes
 
-<<<<<<< HEAD
-## 🛠️ Hardware Requirements
+## Hardware Requirements
 =======
 ## Hardware Requirements
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **ESP32-C3 Development Board**
 - ESP32-C3-DevKitM-1 or compatible
 - Built-in LED for status indication
 - WiFi connectivity
-
-<<<<<<< HEAD
-=======
 
 ### **ESP32-C3 Development Board**
 - 8-channel MOSFET control board
