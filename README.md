@@ -99,7 +99,6 @@ pio run -t upload
 ```
 
 ## Web Interface
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Access**
 Once connected to WiFi, access the web interface at:
@@ -165,12 +164,7 @@ CH8=64    # Set channel 8 to PWM value 64
 STATUS    # Get status of all channels
 RESET     # Reset all channels to default state
 ```
-
-<<<<<<< HEAD
-## 💡 LED Status Indicators
-=======
 ## LED Status Indicators
->>>>>>> 264600953066aa8cba19736c7a74e368a5f4b35d
 
 ### **Blink Patterns**
 - **Error (3 blinks)**: Filesystem or critical errors
